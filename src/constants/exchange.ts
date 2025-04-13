@@ -1,5 +1,5 @@
 import type { Exchange } from '@/types/exchange'
 
-const currencyList: Exchange[] = ['rub', 'eur', 'usd']
+const exchangeList: Exchange[] = ['rub', 'eur', 'usd']
 
-export default currencyList
+export { exchangeList }

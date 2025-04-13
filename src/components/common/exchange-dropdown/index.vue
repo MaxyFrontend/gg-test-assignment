@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import UIDropdown from '@/components/ui/dropdown/index.vue'
-import exchangeList from '@/constants/exchange'
-import { ref } from 'vue'
+import { exchangeList } from '@/constants/exchange'
+import { computed, ref } from 'vue'
 import type { Exchange } from '@/types/exchange'
 
 const props = defineProps<{
-    defaultValue?: Exchange
+    defaultValue?: Exchange | string
+    disabledValue?: Exchange | string
     modelValue?: string
 }>()
 
-const getItems = (defaultValue?: Exchange) => {
+const disabledValues = computed(() =>
+    props.disabledValue ? [props.disabledValue] : []
+)
+
+const getItems = (defaultValue?: Exchange | string) => {
     return exchangeList.map((exchangeItem) => {
         return {
             title: exchangeItem.toUpperCase(),
@@ -33,6 +38,7 @@ const emit = defineEmits<{
         :selected-value="props.defaultValue"
         :class="s.dropdown"
         :items="items"
+        :disabled-values="disabledValues"
         @update:selected-value="emit('update:modelValue', $event as Exchange)"
     />
 </template>

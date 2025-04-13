@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import getExchangeRate from '@/api/getExchangeRate'
 import useExchange from '@/composables/useExchange'
-import exchangeList from '@/constants/exchange'
+import { exchangeList } from '@/constants/exchange'
 import { BaseExchangeRateList } from './components/list'
 import { computed, watch } from 'vue'
 import Container from '@/components/core/container.vue'

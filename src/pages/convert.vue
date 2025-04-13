@@ -1,7 +1,14 @@
+<script setup lang="ts">
+import { ExchangeConvertor } from '@/components/sections/exchange-convertor'
+</script>
+
 <template>
-    <div class="convert">
-        <h1>This is an convert page</h1>
+    <div :class="s.page">
+        <ExchangeConvertor />
     </div>
 </template>
 
-<style></style>
+<style lang="scss" module="s">
+.page {
+}
+</style>

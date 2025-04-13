@@ -8,6 +8,7 @@ const props = withDefaults(
     defineProps<{
         title?: string
         items: DropdownList
+        disabledValues: string[]
         selectedValue?: string
     }>(),
     {
@@ -20,7 +21,9 @@ const emit = defineEmits<{
     (e: 'update:selectedValue', value: string): void
 }>()
 
-const itemsList = ref<DropdownList>(props.items)
+const itemsList = computed<DropdownList>(() =>
+    props.items.filter((item) => !props.disabledValues.includes(item.value))
+)
 const dropdownRef = ref<HTMLElement>()
 const dropdownHeaderRef = ref<InstanceType<typeof DropdownHeader> | undefined>()
 const dropdownWrapperRef = ref<HTMLElement>()

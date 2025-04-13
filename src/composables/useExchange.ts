@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import type { Exchange, ExchangeRate } from '@/types/exchange'
 
-import exchangeList from '@/constants/exchange'
+import { exchangeList } from '@/constants/exchange'
 
 const selectedExchange = ref<Exchange>(exchangeList[0])
 const exchangeRate = ref<ExchangeRate | null>(null)
