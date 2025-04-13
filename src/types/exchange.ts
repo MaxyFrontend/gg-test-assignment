@@ -1,3 +1,36 @@
 type Exchange = 'rub' | 'eur' | 'usd'
 
-export type { Exchange }
+type ExchangeRate = {
+    'usd-rub': number
+    'eur-rub': number
+    'brl-rub': number
+    'kzt-rub': number
+    'idr-rub': number
+    'rub-usd': number
+    'eur-usd': number
+    'brl-usd': number
+    'kzt-usd': number
+    'idr-usd': number
+    'rub-eur': number
+    'usd-eur': number
+    'brl-eur': number
+    'kzt-eur': number
+    'idr-eur': number
+    'rub-brl': number
+    'usd-brl': number
+    'eur-brl': number
+    'kzt-brl': number
+    'idr-brl': number
+    'rub-kzt': number
+    'usd-kzt': number
+    'eur-kzt': number
+    'brl-kzt': number
+    'idr-kzt': number
+    'rub-idr': number
+    'usd-idr': number
+    'eur-idr': number
+    'brl-idr': number
+    'kzt-idr': number
+}
+
+export type { Exchange, ExchangeRate }

@@ -1,16 +1,22 @@
 import { ref } from 'vue'
-import type { Exchange } from '@/types/exchange'
+import type { Exchange, ExchangeRate } from '@/types/exchange'
 
 import exchangeList from '@/constants/exchange'
 
-const exchange = ref<Exchange>(exchangeList[0])
+const selectedExchange = ref<Exchange>(exchangeList[0])
+const exchangeRate = ref<ExchangeRate | null>(null)
 
 export default function useExchange() {
     const setExchange = (newExchange: Exchange): void => {
-        exchange.value = newExchange
+        selectedExchange.value = newExchange
+    }
+    const setExchangeRate = (newExchangeRate: ExchangeRate): void => {
+        exchangeRate.value = newExchangeRate
     }
     return {
-        exchange,
-        setExchange
+        selectedExchange,
+        exchangeRate,
+        setExchange,
+        setExchangeRate
     }
 }

@@ -1,9 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { BaseExchangeRate } from '@/components/sections/base-exchange-rate'
+</script>
 
 <template>
-    <div class="home">
-        <h1>This is an Home page</h1>
-    </div>
+    <BaseExchangeRate />
 </template>
 
-<style></style>
+<style lang="scss"></style>
