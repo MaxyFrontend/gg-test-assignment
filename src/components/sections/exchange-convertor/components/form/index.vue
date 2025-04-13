@@ -79,13 +79,21 @@ watch([referenceExchangeType, quoteExchangeType], async () => {
                     :disabled-value="quoteExchangeType"
                     :class="s.dropdown"
                 />
-                <UIinput
-                    v-model="state.referenceExchangeValue"
-                    type="text"
-                    :class="s.input"
-                    :invalid="v$.referenceExchangeValue.$error"
-                    @input="referenceExchangeUpdate"
-                />
+                <div :class="s.inner">
+                    <UIinput
+                        v-model="state.referenceExchangeValue"
+                        type="text"
+                        :class="s.input"
+                        :invalid="v$.referenceExchangeValue.$error"
+                        @input="referenceExchangeUpdate"
+                    />
+                    <p
+                        v-if="v$.referenceExchangeValue.$error"
+                        :class="s.errorMessage"
+                    >
+                        Некорректный формат
+                    </p>
+                </div>
             </div>
             <div :class="s.row">
                 <ExchangeDropdown
@@ -94,13 +102,21 @@ watch([referenceExchangeType, quoteExchangeType], async () => {
                     :disabled-value="referenceExchangeType"
                     :class="s.dropdown"
                 />
-                <UIinput
-                    v-model="state.quoteExchangeValue"
-                    type="text"
-                    :class="s.input"
-                    :invalid="v$.quoteExchangeValue.$error"
-                    @input="quoteExchangeUpdate"
-                />
+                <div :class="s.inner">
+                    <UIinput
+                        v-model="state.quoteExchangeValue"
+                        type="text"
+                        :class="s.input"
+                        :invalid="v$.quoteExchangeValue.$error"
+                        @input="quoteExchangeUpdate"
+                    />
+                    <p
+                        v-if="v$.quoteExchangeValue.$error"
+                        :class="s.errorMessage"
+                    >
+                        Некорректный формат
+                    </p>
+                </div>
             </div>
         </div>
         <p v-if="isLoading" :class="s.loader">Exchange Rate Loading...</p>
@@ -117,16 +133,20 @@ watch([referenceExchangeType, quoteExchangeType], async () => {
 }
 .row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     &:nth-child(n + 2) {
         margin-left: 50px;
     }
 }
-.input {
+.inner {
     margin-left: 20px;
 }
 .loader {
     width: fit-content;
     margin: 40px auto 0;
+}
+.errorMessage {
+    color: rgb(191, 13, 13);
+    margin-top: 5px;
 }
 </style>
