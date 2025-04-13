@@ -1,0 +1,12 @@
+@use "./prepend" as *;
+
+:root {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: $base-color;
+    background-color: $background-color;
+}
+body,
+html {
+    scroll-behavior: smooth;
+}

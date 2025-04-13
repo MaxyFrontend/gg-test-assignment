@@ -1,0 +1,19 @@
+$background-color: #fafafa;
+$base-color: #333333;
+
+$breakpoints: (
+    'xxs': 360px,
+    'xs': 460px,
+    'sm': 568px,
+    'md': 740px,
+    'ms': 840px,
+    'lg': 960px,
+    'hd': 1079px,
+    'xl': 1024px,
+    'xxl': 1280px,
+    'HD': 1400px,
+    'HDPlus': 1700px,
+    'FullHD': 1919px,
+    '2k': 2559px,
+    '4k': 3839px,
+);

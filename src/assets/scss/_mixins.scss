@@ -1,0 +1,23 @@
+@use "variables" as *;
+@use "sass:map";
+
+@mixin down($breakpoint) {
+    @media screen and (max-width: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+@mixin down-height($breakpoint) {
+    @media screen and (max-height: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+@mixin up-height($breakpoint) {
+    @media screen and (min-height: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+@mixin up($breakpoint) {
+    @media screen and (min-width: map.get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
