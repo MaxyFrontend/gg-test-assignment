@@ -1,3 +1,4 @@
-import layoutContainer from './layout-container.vue'
+import LayoutContainer from './layout-container.vue'
+import Container from './container.vue'
 
-export { layoutContainer }
+export { LayoutContainer, Container }
